@@ -13,7 +13,6 @@ public class GameManager : Singleton<GameManager>
 
     public Student[] Students;
 
-
     private GameStage curGameStage;
 
     private Student curStudent;

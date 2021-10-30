@@ -13,4 +13,6 @@ MonoBehaviour:
   m_Name: "\u5B66\u751F6"
   m_EditorClassIdentifier: 
   StudentGO: {fileID: 4762193416445520264, guid: 0c1a31eb1632f1348a9c5fe0dbc45fc8, type: 3}
-  Tag: 2
+  Prefix: "\u6D77\u7EB3\u767E\u5DDD"
+  Name: "\u5E9E\u5149\u5927"
+  Tag: 0200000006000000
