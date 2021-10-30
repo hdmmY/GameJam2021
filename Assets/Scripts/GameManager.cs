@@ -29,17 +29,17 @@ public class GameManager : Singleton<GameManager>
 
     private void Update()
     {
-        if (curGameStage == GameStage.ShowStudent && SwipeInput.Instance.swipedUp)
-        {
-            if (curStudentIndex < Students.Length)
-            {
-                TransitionToNextStudent();
-            }
-            else
-            {
-                curGameStage = GameStage.End;
-            }
-        }
+        // if (curGameStage == GameStage.ShowStudent && SwipeInput.Instance.swipedUp)
+        // {
+        //     if (curStudentIndex < Students.Length)
+        //     {
+        //         TransitionToNextStudent();
+        //     }
+        //     else
+        //     {
+        //         curGameStage = GameStage.End;
+        //     }
+        // }
 
     }
 
@@ -50,8 +50,19 @@ public class GameManager : Singleton<GameManager>
         curStudent.Tag = student.Tag;
     }
 
-    private void TransitionToNextStudent()
+    public void TransitionToNextStudent()
     {
+        if (curGameStage != GameStage.ShowStudent)
+        {
+            return;
+        }
+
+        if (curStudentIndex >= Students.Length)
+        {
+            curGameStage = GameStage.End;
+            return;
+        }
+
         if (curStudent && curStudent.StudentGO)
         {
             Destroy(curStudent.StudentGO);
