@@ -4,4 +4,5 @@ using UnityEngine;
 
 public class StudentThumb : MonoBehaviour
 {
+    public Student Student;
 }

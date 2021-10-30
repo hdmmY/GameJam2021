@@ -20,6 +20,8 @@ public enum StudentTag
 [CreateAssetMenu(menuName = "ScriptableObjects/Student", order = 1)]
 public class Student : ScriptableObject
 {
+    public int Id;
+
     public GameObject StudentGO;
 
     public string Prefix;

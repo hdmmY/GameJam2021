@@ -41,14 +41,18 @@ public class StudentThumbDragHandler : MonoBehaviour, IBeginDragHandler, IDragHa
 
         var go = eventData.pointerCurrentRaycast.gameObject;
 
-        if(go.GetComponent<UIHolder>())
+        if (go == null)
+        {
+            transform.SetParent(initialParent);
+        }
+        else if (go.GetComponent<UIHolder>())
         {
             transform.SetParent(go.transform.parent);
         }
-        else if(go.GetComponent<StudentThumb>())
+        else if (go.GetComponent<StudentThumb>())
         {
             transform.SetParent(go.transform.parent);
-            
+
             go.transform.SetParent(initialParent);
             go.GetComponent<StudentThumbDragHandler>().FitToParent();
         }

@@ -12,6 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1bab5dd51a823ab499e25a8128cb3345, type: 3}
   m_Name: "\u5B66\u751F4"
   m_EditorClassIdentifier: 
+  Id: 4
   StudentGO: {fileID: 6780259406779107306, guid: 9cfed8bf6e464d14cb6471ac2a03cf26, type: 3}
   Prefix: "\u5438\u55B5\u661F\u4EBA"
   Name: "\u5F20\u5BA0\u7231"
