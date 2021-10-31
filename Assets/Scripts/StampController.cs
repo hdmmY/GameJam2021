@@ -94,13 +94,13 @@ public class StampController : MonoBehaviour
 
         PopulateMatches();
 
-        SceneManager.LoadSceneAsync("BUS_Test", LoadSceneMode.Single);
+        SceneManager.LoadSceneAsync("BUS", LoadSceneMode.Single);
     }
 
     private void PopulateMatches()
     {
         var slots = transform.parent.GetChild(1);
-        for (int i = 0; i < slots.childCount; i++)
+        for (int i = 0; i < slots.childCount;)
         {
             var match = new StudentMatch();
 

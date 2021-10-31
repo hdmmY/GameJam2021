@@ -43,7 +43,7 @@ public class StudentMatch
             case StudentTag.Pet: return Resources.Load<Sprite>("标签/下辈子");
             case StudentTag.Insect: return Resources.Load<Sprite>("标签/神奇生物");
             case StudentTag.Shandong: return Resources.Load<Sprite>("标签/shandong");
-            case StudentTag.Anime: return null;
+            case StudentTag.Anime: return Resources.Load<Sprite>("标签/中二");
             case StudentTag.WarWolf: return Resources.Load<Sprite>("标签/第四赤色支部");
             case StudentTag.Scheming: return Resources.Load<Sprite>("标签/正人君子");
             case StudentTag.LeftHand: return Resources.Load<Sprite>("标签/神之左手");

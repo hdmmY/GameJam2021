@@ -1,6 +1,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
 public class GameManager : Singleton<GameManager>
 {
@@ -33,6 +34,14 @@ public class GameManager : Singleton<GameManager>
         ending.GetComponentInChildren<Text>().text = Matches[index].GetEnding();
     }
 
+    public void LoadStudentScene()
+    {
+        SceneManager.LoadSceneAsync("Art_Mockup");
+    }
 
+    public void ExitGame()
+    {
+        Application.Quit();
+    }
 
 }
