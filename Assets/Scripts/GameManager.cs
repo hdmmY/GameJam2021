@@ -16,7 +16,6 @@ public class GameManager : Singleton<GameManager>
 
     public List<Student> Students;
     public List<StudentMatch> Matches;
-    public List<Sprite> TagSprites;
 
 
 
