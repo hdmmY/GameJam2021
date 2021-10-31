@@ -17,7 +17,7 @@ public class StudentMatch
             Student1 = tmp;
         }
 
-        return EndingData[Student1.Id, Student2.Id];
+        return EndingData[Student1.Id-1, Student2.Id-1];
     }
 
     public Sprite GetTag()
@@ -33,7 +33,7 @@ public class StudentMatch
             }
         }
 
-        return Resources.Load<Sprite>("标签/失败Title");
+        return Resources.Load<Sprite>("标签/title");
     }
 
     private static Sprite GetTagSprite(StudentTag tag)
