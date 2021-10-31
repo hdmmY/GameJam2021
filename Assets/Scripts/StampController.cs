@@ -99,6 +99,8 @@ public class StampController : MonoBehaviour
 
     private void PopulateMatches()
     {
+        GameManager.Instance.Matches = new List<StudentMatch>();
+
         var slots = transform.parent.GetChild(1);
         for (int i = 0; i < slots.childCount;)
         {
