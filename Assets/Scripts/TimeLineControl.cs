@@ -1,10 +1,12 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class TimeLineControl : MonoBehaviour
 {
 
+public Image Image;
 public int CurrentId = 0;
 public List<GameObject> Cameras;
 public List<GameObject> Timelines;
@@ -12,6 +14,10 @@ public List<GameObject> TimelinesBack;
 public float GuessTime= 20f;
 public float WaitTime= 3f;
 public float StartTime= 3f;
+
+public float Timer =0f;
+
+public GameObject TimeBar;
 
    void Start()
     {
@@ -27,6 +33,7 @@ public float StartTime= 3f;
 
         Debug.Log("Started GuessTime : " + Time.time);
 
+Timer = GuessTime;
         yield return new WaitForSeconds(GuessTime);
         Timelines[CurrentId].SetActive(true);
 
@@ -45,6 +52,12 @@ public float StartTime= 3f;
 
     void Update()
     {
-        
+        if(Timer>0){
+            TimeBar.SetActive(true);
+            Image.fillAmount = Timer / GuessTime;
+            Timer-=Time.deltaTime;
+        }else{
+            TimeBar.SetActive(false);
+        }
     }
 }
