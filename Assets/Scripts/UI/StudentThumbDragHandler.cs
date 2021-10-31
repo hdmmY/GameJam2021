@@ -10,6 +10,8 @@ public class StudentThumbDragHandler : MonoBehaviour, IBeginDragHandler, IDragHa
     private Transform canvas;
     private Image image;
     private Camera camera;
+    private AudioSource audioSource;
+
 
     private Transform initialParent;
 
@@ -19,6 +21,14 @@ public class StudentThumbDragHandler : MonoBehaviour, IBeginDragHandler, IDragHa
         canvas = GetComponentInParent<Canvas>().transform;
         image = GetComponent<Image>();
         camera = canvas.GetComponent<Canvas>().worldCamera;
+
+        audioSource = GetComponent<AudioSource>();
+        if (audioSource == null)
+        {
+            audioSource = gameObject.AddComponent<AudioSource>();
+        }
+        audioSource.clip = Resources.Load<AudioClip>("Audio/拖曳头像放下音效");
+        audioSource.loop = false;
     }
 
     public void OnBeginDrag(PointerEventData eventData)
@@ -50,10 +60,14 @@ public class StudentThumbDragHandler : MonoBehaviour, IBeginDragHandler, IDragHa
         }
         else if (go.GetComponent<UIHolder>())
         {
+            audioSource.Play();
+
             transform.SetParent(go.transform.parent);
         }
         else if (go.GetComponent<StudentThumb>())
         {
+            audioSource.Play();
+            
             transform.SetParent(go.transform.parent);
 
             go.transform.SetParent(initialParent);
@@ -76,5 +90,10 @@ public class StudentThumbDragHandler : MonoBehaviour, IBeginDragHandler, IDragHa
         trans.sizeDelta = Vector2.zero;
         trans.offsetMax = new Vector2(0f, 0f);
         trans.offsetMin = new Vector2(0f, 0f);
+    }
+
+    private void PlayDrogAudio()
+    {
+        
     }
 }
