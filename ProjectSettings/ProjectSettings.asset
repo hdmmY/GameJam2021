@@ -155,7 +155,7 @@ PlayerSettings:
   androidMaxAspectRatio: 2.1
   applicationIdentifier:
     Android: com.DefaultCompany.GameJam2021
-    Standalone: com.DefaultCompany.GameJam2021
+    Standalone: com.DefaultCompany.
     iPhone: com.DefaultCompany.GameJam2021
   buildNumber:
     Standalone: 0
