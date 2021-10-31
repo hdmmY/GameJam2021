@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.InputSystem;
+using UnityEngine.SceneManagement;
 
 public class StampController : MonoBehaviour
 {
@@ -10,6 +11,7 @@ public class StampController : MonoBehaviour
     private Camera camera;
     private Animation anim;
     private bool isMouseHover;
+    private bool inTransition;
 
     private void Start()
     {
@@ -21,6 +23,8 @@ public class StampController : MonoBehaviour
 
     private void Update()
     {
+        if (inTransition) return;
+
         var screenPoint = Mouse.current.position.ReadValue();
 
         RaycastHit hit;
@@ -47,7 +51,7 @@ public class StampController : MonoBehaviour
 
             if (Physics.Raycast(ray, out hit) && hit.transform == transform)
             {
-                if(Mouse.current.leftButton.wasPressedThisFrame && CanComfirm())
+                if (Mouse.current.leftButton.wasPressedThisFrame && CanComfirm())
                 {
                     anim.Play("Sign");
                     yield break;
@@ -67,7 +71,7 @@ public class StampController : MonoBehaviour
     private bool CanComfirm()
     {
         var slots = transform.parent.GetChild(1);
-        
+
         for (int i = 0; i < slots.childCount; i++)
         {
             if (slots.GetChild(i).GetComponentInChildren<StudentThumb>() == null)
@@ -79,10 +83,34 @@ public class StampController : MonoBehaviour
         return true;
     }
 
-
-
     public void ShowSignature()
     {
         Signature.SetActive(true);
+    }
+
+    public void TransitToNextScene()
+    {
+        inTransition = true;
+
+        PopulateMatches();
+
+        SceneManager.LoadSceneAsync("BUS_Test", LoadSceneMode.Single);
+    }
+
+    private void PopulateMatches()
+    {
+        var slots = transform.parent.GetChild(1);
+        for (int i = 0; i < slots.childCount; i++)
+        {
+            var match = new StudentMatch();
+
+            match.Student1 = slots.GetChild(i).GetComponentInChildren<StudentThumb>().Student;
+            i++;
+
+            match.Student2 = slots.GetChild(i).GetComponentInChildren<StudentThumb>().Student;
+            i++;
+
+            GameManager.Instance.Matches.Add(match);
+        }
     }
 }

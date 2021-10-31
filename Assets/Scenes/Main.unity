@@ -123,62 +123,6 @@ NavMeshSettings:
     debug:
       m_Flags: 0
   m_NavMeshData: {fileID: 0}
---- !u!1 &4576226
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 4576227}
-  - component: {fileID: 4576228}
-  m_Layer: 0
-  m_Name: GameManager
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &4576227
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4576226}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -0.00999999, y: 0.6999999, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children: []
-  m_Father: {fileID: 0}
-  m_RootOrder: 1
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &4576228
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4576226}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 3aaec1ddd3dc0bf4daf17f9c04a102f9, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  Students:
-  - {fileID: 11400000, guid: 7f4238a9fe06273429506fd24d3be5df, type: 2}
-  - {fileID: 11400000, guid: 9d6af20e57c8f79409dc25d209047be1, type: 2}
-  - {fileID: 11400000, guid: ee2aec3008d0fb8449ec63da322d93ab, type: 2}
-  - {fileID: 11400000, guid: 12172b1475d34354e8192feb2cfaf48c, type: 2}
-  - {fileID: 11400000, guid: ccd3d17e2da995445b69bf8670086596, type: 2}
-  - {fileID: 11400000, guid: c739c534de54bf24ab200a1cadef0108, type: 2}
-  - {fileID: 11400000, guid: c2f86fe6a26b4cf47bb647edce4dbadd, type: 2}
-  - {fileID: 11400000, guid: 6996b73259e1a5f48a4b13bc9b8be139, type: 2}
-  Matches: []
-  StudentScene: {fileID: 1690854222}
-  MatchCanvas: {fileID: 993655734}
-  BusScene: {fileID: 1046012532}
 --- !u!1 &107380706
 GameObject:
   m_ObjectHideFlags: 0
@@ -717,7 +661,7 @@ RectTransform:
   - {fileID: 1750000830}
   - {fileID: 2019996225}
   m_Father: {fileID: 0}
-  m_RootOrder: 3
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
@@ -807,7 +751,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 4576228}
+      - m_Target: {fileID: 0}
         m_TargetAssemblyTypeName: GameManager, Assembly-CSharp
         m_MethodName: TransitionToNextStudent
         m_Mode: 1
@@ -1254,7 +1198,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 6
+  m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &669964647
 GameObject:
@@ -1745,6 +1689,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a6516e61773d4e4499fb853a1afb04bf, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  Signature: {fileID: 0}
 --- !u!61 &763141069
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -1832,7 +1777,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 7
+  m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &763287910
 GameObject:
@@ -2511,7 +2456,7 @@ Transform:
   - {fileID: 1258357886}
   - {fileID: 1415746772}
   m_Father: {fileID: 0}
-  m_RootOrder: 4
+  m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1083956683
 GameObject:
@@ -3704,7 +3649,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 5
+  m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1556819566
 GameObject:
@@ -4261,7 +4206,7 @@ RectTransform:
   m_Children:
   - {fileID: 271948080}
   m_Father: {fileID: 0}
-  m_RootOrder: 2
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
@@ -5050,7 +4995,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 4576228}
+      - m_Target: {fileID: 0}
         m_TargetAssemblyTypeName: GameManager, Assembly-CSharp
         m_MethodName: TransitionToBusStage
         m_Mode: 1
