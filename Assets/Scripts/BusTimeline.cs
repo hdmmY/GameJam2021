@@ -9,20 +9,22 @@ public class BusTimeline : MonoBehaviour
     public List<GameObject> Cams;
     public GameObject StartTimeline;
     public GameObject EndTimeline;
-public int CurrentMatch = 0;
+    public int CurrentMatch = 0;
 
-public GameObject NextB,EndB;
+    public GameObject NextB, EndB;
 
-public SpriteRenderer TagPic;
+    public SpriteRenderer TagPic;
 
-public void GameEnd(){
+    public void GameEnd()
+    {
         SceneManager.LoadSceneAsync("Title", LoadSceneMode.Single);
-}
+    }
 
-public void ButtonAction(){
-    StartCoroutine(ExampleCoroutine());
+    public void ButtonAction()
+    {
+        StartCoroutine(ExampleCoroutine());
 
-}
+    }
 
     void Start()
     {
@@ -31,36 +33,39 @@ public void ButtonAction(){
 
     IEnumerator ExampleCoroutine()
     {
-        if(CurrentMatch<4){
+        if (CurrentMatch < 4)
+        {
+            //endSelf
+            if (CurrentMatch != 0)
+            {
+                StartTimeline.SetActive(false);
+                EndTimeline.SetActive(true);
+                yield return new WaitForSeconds(0.5f);
+                EndTimeline.SetActive(false);
+
+            }
+
+            GameManager.Instance.Score += GameManager.Instance.Matches[CurrentMatch].GetScore();
+
+            //freshContent
+            TagPic.sprite = GameManager.Instance.Matches[CurrentMatch].GetTag();
+            GameManager.Instance.ShowMatch(CurrentMatch);
+            //start
+            Cams[CurrentMatch].SetActive(false);
+            StartTimeline.SetActive(true);
+            yield return new WaitForSeconds(0.5f);
+            //StartTimeline.SetActive(false);
 
 
-              //endSelf
-    if(CurrentMatch!=0){
-    StartTimeline.SetActive(false);
-    EndTimeline.SetActive(true);
-        yield return new WaitForSeconds(0.5f);
-    EndTimeline.SetActive(false);
-
-    }
-
-    //freshContent
-    TagPic.sprite = GameManager.Instance.Matches[CurrentMatch].GetTag();
-    GameManager.Instance.ShowMatch(CurrentMatch);
-    //start
-    Cams[CurrentMatch].SetActive(false);
-    StartTimeline.SetActive(true);
-        yield return new WaitForSeconds(0.5f);
-    //StartTimeline.SetActive(false);
-
-
-      CurrentMatch++;
-      if(CurrentMatch==4){
-        NextB.SetActive(false);
-        EndB.SetActive(true);
-      }
+            CurrentMatch++;
+            if (CurrentMatch == 4)
+            {
+                NextB.SetActive(false);
+                EndB.SetActive(true);
+            }
         }
-       
-  
-        
+
+
+
     }
 }

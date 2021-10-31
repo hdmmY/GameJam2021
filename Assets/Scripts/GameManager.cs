@@ -14,6 +14,7 @@ public class GameManager : Singleton<GameManager>
 
     public List<StudentMatch> Matches;
 
+    public int Score;
 
     public void ShowMatch(int index)
     {

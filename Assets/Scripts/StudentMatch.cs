@@ -20,6 +20,24 @@ public class StudentMatch
         return EndingData[Student1.Id - 1, Student2.Id - 1];
     }
 
+    public int GetScore()
+    {
+        int score = 0;
+
+        for (int i = 0; i < Student1.Tag.Count; i++)
+        {
+            for (int j = 0; j < Student2.Tag.Count; j++)
+            {
+                if (Student1.Tag[i] == Student2.Tag[j])
+                {
+                    score += 100;
+                }
+            }
+        }
+
+        return score;;
+    }
+
     public Sprite GetTag()
     {
         for (int i = 0; i < Student1.Tag.Count; i++)
