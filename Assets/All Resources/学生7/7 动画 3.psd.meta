@@ -104,9 +104,9 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 203
-        y: 967
-        width: 1068
-        height: 1405
+        y: 986
+        width: 1052
+        height: 1386
       alignment: 9
       pivot: {x: 0.26545757, y: 0.2247121}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -145,10 +145,10 @@ TextureImporter:
       name: "7 \u52A8\u753B_2"
       rect:
         serializedVersion: 2
-        x: 459
-        y: 148
-        width: 768
-        height: 768
+        x: 381
+        y: 0
+        width: 954
+        height: 986
       alignment: 9
       pivot: {x: 0.29705572, y: 0.21007967}
       border: {x: 0, y: 0, z: 0, w: 0}
