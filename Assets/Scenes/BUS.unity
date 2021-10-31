@@ -401,6 +401,8 @@ PlayableDirector:
     value: {fileID: 1226738156}
   - key: {fileID: -4175315206488677091, guid: 4cfd5e37089b48246abbdc39c2c1c867, type: 2}
     value: {fileID: 65108098}
+  - key: {fileID: 8282525256348531639, guid: 4cfd5e37089b48246abbdc39c2c1c867, type: 2}
+    value: {fileID: 0}
   m_ExposedReferences:
     m_References: []
 --- !u!4 &96713699
@@ -10495,7 +10497,7 @@ AudioSource:
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 8300000, guid: cde98939b3f9a9f448013ce74b95194e, type: 3}
   m_PlayOnAwake: 1
-  m_Volume: 1
+  m_Volume: 0.365
   m_Pitch: 1
   Loop: 1
   Mute: 0
@@ -12640,6 +12642,14 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 8200000, guid: cdb5f0d5f87d408418ef63082f44a203, type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8200000, guid: cdb5f0d5f87d408418ef63082f44a203, type: 3}
+      propertyPath: m_audioClip
+      value: 
+      objectReference: {fileID: 8300000, guid: ca1d5cf23a1125b4295d52064f2f5d5b, type: 3}
     - target: {fileID: 8200000, guid: cdb5f0d5f87d408418ef63082f44a203, type: 3}
       propertyPath: m_PlayOnAwake
       value: 1
