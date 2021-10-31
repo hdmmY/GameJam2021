@@ -9,8 +9,7 @@ public class StudentThumbDragHandler : MonoBehaviour, IBeginDragHandler, IDragHa
 {
     private Transform canvas;
     private Image image;
-
-
+    private Camera camera;
 
     private Transform initialParent;
 
@@ -19,6 +18,7 @@ public class StudentThumbDragHandler : MonoBehaviour, IBeginDragHandler, IDragHa
     {
         canvas = GetComponentInParent<Canvas>().transform;
         image = GetComponent<Image>();
+        camera = canvas.GetComponent<Canvas>().worldCamera;
     }
 
     public void OnBeginDrag(PointerEventData eventData)
@@ -31,8 +31,11 @@ public class StudentThumbDragHandler : MonoBehaviour, IBeginDragHandler, IDragHa
 
     public void OnDrag(PointerEventData eventData)
     {
-        transform.position = Mouse.current.position.ReadValue();
+        var screenPoint = Mouse.current.position.ReadValue();
+        var localPoint = new Vector2();
+        RectTransformUtility.ScreenPointToLocalPointInRectangle(canvas as RectTransform, screenPoint, camera, out localPoint);
 
+        transform.localPosition = localPoint;
     }
 
     public void OnEndDrag(PointerEventData eventData)
@@ -69,10 +72,9 @@ public class StudentThumbDragHandler : MonoBehaviour, IBeginDragHandler, IDragHa
         var trans = transform as RectTransform;
 
         trans.localPosition = Vector3.zero;
-        trans.anchorMax = new Vector2(1, 1);
-        trans.anchorMin = new Vector2(0, 0);
         trans.pivot = new Vector2(0.5f, 0.5f);
-        trans.localScale = new Vector3(1, 1, 1);
         trans.sizeDelta = Vector2.zero;
+        trans.offsetMax = new Vector2(0f, 0f);
+        trans.offsetMin = new Vector2(0f, 0f);
     }
 }
