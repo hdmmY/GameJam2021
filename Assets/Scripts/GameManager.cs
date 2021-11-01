@@ -14,7 +14,18 @@ public class GameManager : Singleton<GameManager>
 
     public List<StudentMatch> Matches;
 
-    public int Score;
+    private int score;
+    public int Score
+    {
+        get { return score; }
+        set
+        {
+            if (value > HighestScore) HighestScore = value;
+            score = value;
+        }
+    }
+
+    public int HighestScore;
 
     public void ShowMatch(int index)
     {
