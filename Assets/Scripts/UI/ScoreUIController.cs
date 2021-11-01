@@ -17,11 +17,15 @@ public class ScoreUIController : MonoBehaviour
     [SerializeField] private Sprite score700;
     [SerializeField] private Sprite score800;
 
+    private int index;
 
     private void Start()
     {
         image = GetComponent<Image>();
         GameManager.Instance.Score = 0;
+
+        index = 0;
+        CalculateScore();
     }
 
     private void Update()
@@ -38,5 +42,10 @@ public class ScoreUIController : MonoBehaviour
             case 700: image.sprite = score700; break;
             case 800: image.sprite = score800; break;
         }
+    }
+
+    public void CalculateScore()
+    {
+        GameManager.Instance.Score += GameManager.Instance.Matches[index++].GetScore();
     }
 }
